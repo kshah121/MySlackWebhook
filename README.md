@@ -5,6 +5,8 @@ Initial steps to start the env and send the message
     - `source env/bin/activate`
     - `pip install -r requirements.txt`
     - `source secrets.sh`
-    - `python server.py ["your message to post"]'
+    - `python webhookintegration.py ["your message to post"]`
+
+Once the steps are executed, you can see the message being posted in the Slack Channel
     
     
