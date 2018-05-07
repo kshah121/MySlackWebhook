@@ -6,7 +6,7 @@ app = Flask(__name__)
 app.secret_key = 'afdaaf'
 url = os.environ['WEBHOOK_URL']
 
-	
+##Code to deal with error scenarios	
 def _post(payload):
 	r = requests.post(url, data=json.dumps(payload))
 	if not _validate_response(r):
@@ -21,6 +21,7 @@ def _validate_response(response):
 		return False
 	return True
 
+##Payload information
 def post_to_webhook(message):
 	payload = {
 		'text':message
@@ -35,6 +36,7 @@ def main():
 		post_to_webhook(message)
 	return 'Posting message %s' % message
 
+##Code to integrate the external weather app
 def get_current_weather():
 	city_zipcode = "10001"
 	slack_msg = None
@@ -49,6 +51,7 @@ def get_current_weather():
 		slack_msg = "Current weather in %s is %s" % (city_name, current_weather)
 	return slack_msg
 
+##Code for Slash Command
 @app.route('/hello', methods=['GET','POST'])
 def hello_slash_cmd():
 	print ("Inside hello", file=sys.stdout)
