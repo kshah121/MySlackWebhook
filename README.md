@@ -2,7 +2,7 @@
 
 
 ## Basic Usage
- - Basically with this integration, we will be able to send messages to the slack channel externally.
+ - Basically with this integration, we will be able to send messages to the slack channel and also a slash command to get a random image.
  - An app was created to post the messages to the slack channel.
 testing webhook integration
 Initial steps to start the environments
